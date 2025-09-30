@@ -1,0 +1,69 @@
+C:\ADAMO\code-platform\code-platform\app/
+C:\ADAMO\code-platform\code-platform\app\Http/
+C:\ADAMO\code-platform\code-platform\app\Http\Controllers/
+    C:\ADAMO\code-platform\code-platform\app\Http\Controllers\AdminController.php
+    C:\ADAMO\code-platform\code-platform\app\Http\Controllers\AuthController.php
+    C:\ADAMO\code-platform\code-platform\app\Http\Controllers\Controller.php
+    C:\ADAMO\code-platform\code-platform\app\Http\Controllers\UploadController.php
+C:\ADAMO\code-platform\code-platform\app\Http\Middleware/
+    C:\ADAMO\code-platform\code-platform\app\Http\Middleware\AdminMiddleware.php
+C:\ADAMO\code-platform\code-platform\app\Models/
+    C:\ADAMO\code-platform\code-platform\app\Models\Upload.php
+    C:\ADAMO\code-platform\code-platform\app\Models\User.php
+C:\ADAMO\code-platform\code-platform\app\Providers/
+    C:\ADAMO\code-platform\code-platform\app\Providers\AppServiceProvider.php
+C:\ADAMO\code-platform\code-platform\app\Services/
+    C:\ADAMO\code-platform\code-platform\app\Services\GoogleDriveService.php
+C:\ADAMO\code-platform\code-platform\bootstrap/
+    C:\ADAMO\code-platform\code-platform\bootstrap\app.php
+    C:\ADAMO\code-platform\code-platform\bootstrap\providers.php
+C:\ADAMO\code-platform\code-platform\bootstrap\cache/
+    C:\ADAMO\code-platform\code-platform\bootstrap\cache\.gitignore
+    C:\ADAMO\code-platform\code-platform\bootstrap\cache\packages.php
+    C:\ADAMO\code-platform\code-platform\bootstrap\cache\services.php
+C:\ADAMO\code-platform\code-platform\config/
+    C:\ADAMO\code-platform\code-platform\config\app.php
+    C:\ADAMO\code-platform\code-platform\config\auth.php
+    C:\ADAMO\code-platform\code-platform\config\cache.php
+    C:\ADAMO\code-platform\code-platform\config\database.php
+    C:\ADAMO\code-platform\code-platform\config\filesystems.php
+    C:\ADAMO\code-platform\code-platform\config\logging.php
+    C:\ADAMO\code-platform\code-platform\config\mail.php
+    C:\ADAMO\code-platform\code-platform\config\queue.php
+    C:\ADAMO\code-platform\code-platform\config\services.php
+    C:\ADAMO\code-platform\code-platform\config\session.php
+C:\ADAMO\code-platform\code-platform\database/
+    C:\ADAMO\code-platform\code-platform\database\.gitignore
+    C:\ADAMO\code-platform\code-platform\database\database.sqlite
+C:\ADAMO\code-platform\code-platform\database\factories/
+    C:\ADAMO\code-platform\code-platform\database\factories\UserFactory.php
+C:\ADAMO\code-platform\code-platform\database\migrations/
+    C:\ADAMO\code-platform\code-platform\database\migrations\0001_01_01_000000_create_users_table.php
+    C:\ADAMO\code-platform\code-platform\database\migrations\0001_01_01_000001_create_cache_table.php
+    C:\ADAMO\code-platform\code-platform\database\migrations\0001_01_01_000002_create_jobs_table.php
+    C:\ADAMO\code-platform\code-platform\database\migrations\2025_09_16_073503_add_plan_and_verbali_to_users_table.php
+    C:\ADAMO\code-platform\code-platform\database\migrations\2025_09_16_073504_create_uploads_table.php
+    C:\ADAMO\code-platform\code-platform\database\migrations\2025_09_28_add_verbale_fields_to_uploads_table.php
+C:\ADAMO\code-platform\code-platform\database\seeders/
+    C:\ADAMO\code-platform\code-platform\database\seeders\DatabaseSeeder.php
+C:\ADAMO\code-platform\code-platform\resources/
+C:\ADAMO\code-platform\code-platform\resources\css/
+    C:\ADAMO\code-platform\code-platform\resources\css\app.css
+C:\ADAMO\code-platform\code-platform\resources\js/
+    C:\ADAMO\code-platform\code-platform\resources\js\app.js
+    C:\ADAMO\code-platform\code-platform\resources\js\bootstrap.js
+C:\ADAMO\code-platform\code-platform\resources\views/
+    C:\ADAMO\code-platform\code-platform\resources\views\welcome.blade.php
+C:\ADAMO\code-platform\code-platform\resources\views\admin/
+    C:\ADAMO\code-platform\code-platform\resources\views\admin\dashboard.blade.php
+    C:\ADAMO\code-platform\code-platform\resources\views\admin\upload-detail.blade.php
+C:\ADAMO\code-platform\code-platform\resources\views\auth/
+    C:\ADAMO\code-platform\code-platform\resources\views\auth\login.blade.php
+    C:\ADAMO\code-platform\code-platform\resources\views\auth\register.blade.php
+C:\ADAMO\code-platform\code-platform\resources\views\dashboard/
+    C:\ADAMO\code-platform\code-platform\resources\views\dashboard\upload.blade.php
+C:\ADAMO\code-platform\code-platform\resources\views\layouts/
+    C:\ADAMO\code-platform\code-platform\resources\views\layouts\app.blade.php
+C:\ADAMO\code-platform\code-platform\routes/
+    C:\ADAMO\code-platform\code-platform\routes\console.php
+    C:\ADAMO\code-platform\code-platform\routes\web.php

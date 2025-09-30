@@ -1,0 +1,44 @@
+concurrent = 4
+check_interval = 0
+connection_max_age = "15m0s"
+shutdown_timeout = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "code-platform-runner"
+  url = "https://gitlab.com/"
+  id = 49865183
+  token = "glrt-6P-Kq6_xxxxxxxxxxxxxxx"
+  token_obtained_at = 2025-01-20T00:00:00Z
+  token_expires_at = 0001-01-01T00:00:00Z
+  executor = "docker"
+  tags = ["code-platform", "development", "production"]
+
+  [runners.custom_build_dir]
+
+  [runners.cache]
+    MaxUploadedArchiveSize = 0
+    Type = "local"
+    Shared = true
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
+
+  [runners.docker]
+    tls_verify = false
+    image = "docker:latest"
+    privileged = true # Necessario per Docker in Docker
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = [
+      "/var/run/docker.sock:/var/run/docker.sock", 
+      "/cache", 
+      "/opt/docker/code-platform:/opt/docker/code-platform"
+    ]
+    shm_size = 0
+    network_mtu = 0
+    pull_policy = ["if-not-present"]
+    allowed_pull_policies = ["always", "if-not-present", "never"]

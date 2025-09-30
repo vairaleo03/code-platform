@@ -1,0 +1,110 @@
+version: "3.8"
+services:
+  laravel:
+    image: ${CI_REGISTRY_IMAGE}:${DOCKER_LABEL:-latest}
+    container_name: ${COMPOSE_PROJECT_NAME:-code}-laravel
+    expose:
+      - "8000"
+    environment:
+      # Application core settings
+      - APP_NAME=${APP_NAME:-CO.DE Platform}
+      - APP_ENV=${APP_ENV:-production}
+      - APP_KEY=${APP_KEY}
+      - APP_DEBUG=${APP_DEBUG:-false}
+      - APP_TIMEZONE=${APP_TIMEZONE:-Europe/Rome}
+      - APP_URL=${APP_URL}
+      - ASSET_URL=${APP_URL}
+      - APP_LOCALE=${APP_LOCALE:-it}
+      - APP_FALLBACK_LOCALE=${APP_FALLBACK_LOCALE:-en}
+      - APP_FAKER_LOCALE=${APP_FAKER_LOCALE:-it_IT}
+      - APP_MAINTENANCE_DRIVER=${APP_MAINTENANCE_DRIVER:-file}
+      - BCRYPT_ROUNDS=${BCRYPT_ROUNDS:-12}
+      - FORCE_SCHEME=https
+      - TRUST_PROXIES=*
+      - SECURE_COOKIES=true
+      
+      # Database settings
+      - DB_CONNECTION=mysql
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_CHARSET=utf8mb4
+      - DB_COLLATION=utf8mb4_unicode_ci
+      
+      # Mail settings per notifiche ODV
+      - MAIL_MAILER=${MAIL_MAILER:-smtp}
+      - MAIL_HOST=${MAIL_HOST}
+      - MAIL_PORT=${MAIL_PORT}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - MAIL_ENCRYPTION=${MAIL_ENCRYPTION:-tls}
+      - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
+      - MAIL_FROM_NAME=${MAIL_FROM_NAME:-CO.DE Platform}
+      
+      # File storage settings
+      - FILESYSTEM_DISK=${FILESYSTEM_DISK:-local}
+      - UPLOAD_MAX_SIZE=${UPLOAD_MAX_SIZE:-52428800}
+      - AUDIO_MAX_SIZE=${AUDIO_MAX_SIZE:-52428800}
+      - DOCUMENT_MAX_SIZE=${DOCUMENT_MAX_SIZE:-10485760}
+      
+      # Google Drive settings
+      - GOOGLE_DRIVE_CREDENTIALS_PATH=${GOOGLE_DRIVE_CREDENTIALS_PATH:-storage/app/google/service-account-key.json}
+      - GOOGLE_CLOUD_PROJECT_ID=${GOOGLE_CLOUD_PROJECT_ID}
+      - GOOGLE_DRIVE_SHARED_DRIVE_ID=${GOOGLE_DRIVE_SHARED_DRIVE_ID}
+      - GOOGLE_DRIVE_MAIN_FOLDER=${GOOGLE_DRIVE_MAIN_FOLDER:-CO.DE Platform}
+      - GOOGLE_DRIVE_MAX_FILE_SIZE=${GOOGLE_DRIVE_MAX_FILE_SIZE:-52428800}
+      - GOOGLE_DRIVE_DAILY_UPLOAD_LIMIT=${GOOGLE_DRIVE_DAILY_UPLOAD_LIMIT:-1000}
+      
+      # Admin notification settings
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_NAME=${ADMIN_NAME:-Marco}
+      
+      # Cache settings
+      - CACHE_DRIVER=database
+      - SESSION_DRIVER=database
+      - QUEUE_DRIVER=${QUEUE_DRIVER:-database}
+      
+      # Logging
+      - LOG_CHANNEL=${LOG_CHANNEL:-stack}
+      - LOG_STACK=${LOG_STACK:-single}
+      - LOG_DEPRECATIONS_CHANNEL=${LOG_DEPRECATIONS_CHANNEL:-null}
+      - LOG_LEVEL=${LOG_LEVEL:-debug}
+      
+      # Security settings per CO.DE
+      - SESSION_LIFETIME=${SESSION_LIFETIME:-120}
+      - SESSION_SECURE_COOKIE=${SESSION_SECURE_COOKIE:-true}
+      - SESSION_SAME_SITE=${SESSION_SAME_SITE:-strict}
+    volumes:
+      - laravel_storage:/app/storage
+      - laravel_cache:/app/bootstrap/cache
+      - laravel_uploads:/app/storage/app/uploads
+      - laravel_public:/app/public
+      - /opt/docker/code-platform/storage/app/google:/app/storage/app/google:ro
+    networks:
+      - npm_default
+      - code-platform-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  npm_default:
+    external: true
+  code-platform-network:
+    external: true
+    name: code-platform-network
+
+volumes:
+  laravel_storage:
+    name: ${COMPOSE_PROJECT_NAME:-code}-laravel-storage
+  laravel_cache:
+    name: ${COMPOSE_PROJECT_NAME:-code}-laravel-cache
+  laravel_uploads:
+    name: ${COMPOSE_PROJECT_NAME:-code}-laravel-uploads
+  laravel_public:
+    name: ${COMPOSE_PROJECT_NAME:-code}-laravel-public
