@@ -1,0 +1,369 @@
+.code-gradient { 
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); 
+}
+
+.code-blue { 
+    color: #1e3a8a; 
+}
+
+.code-dark-blue { 
+    background-color: #1e40af; 
+}
+
+.code-light-blue { 
+    color: #3b82f6; 
+}
+
+.code-accent { 
+    color: #f97316; 
+}
+
+.bg-code-blue { 
+    background-color: #1e3a8a; 
+}
+
+.bg-code-accent { 
+    background-color: #f97316; 
+}
+
+.bg-code-light-blue { 
+    background-color: #3b82f6; 
+}
+
+/* Time input styling to match design */
+.time-input {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.time-input:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3b82f6;
+    ring-opacity: 0.5;
+    border-color: transparent;
+}
+
+.time-input.error {
+    border: 2px solid #fca5a5;
+    background-color: #fef2f2;
+    ring-color: #ef4444;
+}
+
+.time-input.error:focus {
+    ring-color: #ef4444;
+}
+
+/* Style time input elements */
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background-color: #3b82f6;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 2px;
+}
+
+input[type="time"]::-webkit-datetime-edit {
+    color: #374151;
+}
+
+input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+    background-color: transparent;
+}
+
+input[type="time"]::-webkit-datetime-edit-hour-field,
+input[type="time"]::-webkit-datetime-edit-minute-field {
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 2px 4px;
+    margin: 0 2px;
+}
+
+input[type="time"].error::-webkit-datetime-edit-hour-field,
+input[type="time"].error::-webkit-datetime-edit-minute-field {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+}
+
+/* Animations */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+.animate-slide-in {
+    animation: slide-in 0.5s ease-out;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+}
+
+/* Mobile optimizations */
+@media (max-width: 1024px) {
+    .pl-14 {
+        padding-left: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pl-14 {
+        padding-left: 2rem;
+    }
+    
+    .max-w-2xl {
+        max-width: 100%;
+    }
+    
+    .flex.items-start.space-x-4 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .flex.items-start.space-x-4 > div:first-child {
+        align-self: flex-start;
+    }
+    
+    .rounded-tl-sm {
+        border-top-left-radius: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .pl-14 {
+        padding-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .p-6 {
+        padding: 1rem;
+    }
+    
+    .text-right {
+        text-align: center;
+    }
+}
+
+/* Standardized card dimensions */
+.dashboard-card {
+    width: 100%;
+    max-width: 48rem; /* max-w-3xl equivalent */
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card.assistant-card {
+    border-top-left-radius: 0.125rem;
+}
+
+.dashboard-card.upload-card {
+    border: 2px dashed #d1d5db;
+    transition: border-color 0.3s ease;
+}
+
+.dashboard-card.upload-card:hover {
+    border-color: #3b82f6;
+}
+
+.dashboard-card.confirmation-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}
+
+.dashboard-card.summary-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
+
+/* Step indicator consistency */
+.step-indicator {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Auto-scroll smooth animation */
+.auto-scroll-target {
+    scroll-margin-top: 2rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Upload Progress Bar - Compact */
+.upload-progress-compact {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+    animation: slideInDown 0.3s ease-out;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.upload-header-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.upload-title-compact {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e40af;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.upload-progress-container-compact {
+    margin-bottom: 0.75rem;
+}
+
+.upload-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.upload-progress-bar-compact {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.upload-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.upload-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.upload-stats-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.upload-stat-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #475569;
+}
+
+.upload-stat-value-compact {
+    font-weight: 600;
+    color: #1e40af;
+}
+
+.upload-percentage-compact {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e40af;
+}
+
+.upload-status-compact {
+    color: #059669;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Mobile adjustments for compact upload bar */
+@media (max-width: 640px) {
+    .upload-progress-compact {
+        padding: 0.75rem;
+    }
+    
+    .upload-stats-compact {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .upload-header-compact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .upload-percentage-compact {
+        font-size: 1rem;
+    }
+}

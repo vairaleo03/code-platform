@@ -1,0 +1,170 @@
+/* CO.DE Platform Authentication Styles */
+
+/* Color definitions */
+.code-gradient { 
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); 
+}
+
+.code-blue { 
+    color: #1e3a8a; 
+}
+
+.code-dark-blue { 
+    background-color: #1e40af; 
+}
+
+.code-light-blue { 
+    color: #3b82f6; 
+}
+
+.bg-code-blue { 
+    background-color: #1e3a8a; 
+}
+
+.bg-code-dark-blue { 
+    background-color: #1e40af; 
+}
+
+.text-code-blue { 
+    color: #1e3a8a; 
+}
+
+.text-code-light-blue { 
+    color: #3b82f6; 
+}
+
+.text-code-dark-blue { 
+    color: #1e40af; 
+}
+
+.focus\:ring-code-blue:focus {
+    --tw-ring-color: #1e3a8a;
+}
+
+.focus\:border-code-blue:focus {
+    --tw-border-color: #1e3a8a;
+}
+
+.focus\:ring-code-light-blue:focus {
+    --tw-ring-color: #3b82f6;
+}
+
+.focus\:border-code-light-blue:focus {
+    --tw-border-color: #3b82f6;
+}
+
+.hover\:bg-code-dark-blue:hover {
+    background-color: #1e40af;
+}
+
+.hover\:text-code-light-blue:hover {
+    color: #3b82f6;
+}
+
+/* Card shadow effect */
+.card-shadow { 
+    box-shadow: 0 10px 30px rgba(30, 64, 175, 0.2); 
+}
+
+/* Professional button effects */
+.btn-professional {
+    transition: all 0.3s ease;
+}
+
+.btn-professional:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+}
+
+/* Gold background for enterprise plan */
+.bg-gold-100 {
+    background-color: #fef3c7;
+}
+
+/* Border styles for plan selection */
+.border-plan-selected {
+    border-color: #1e3a8a;
+    border-width: 2px;
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+.border-plan-default {
+    border-color: #e5e7eb;
+    border-width: 2px;
+}
+
+/* Plan card hover effects */
+.plan-card {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.plan-card:hover {
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input styling */
+.form-input {
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    ring: 2px;
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .grid.md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .grid.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .max-w-2xl {
+        max-width: 95%;
+    }
+    
+    .p-8 {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .text-3xl {
+        font-size: 1.875rem;
+    }
+    
+    .py-12 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
