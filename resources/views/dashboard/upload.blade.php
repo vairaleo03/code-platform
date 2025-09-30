@@ -345,8 +345,7 @@ function chatUploadFlow() {
                    this.meetingDetails.startTime && 
                    this.meetingDetails.endTime && 
                    this.checkTimeValidity() &&
-                   this.odvMembers.some(m => m.name && m.role) &&
-                   this.notesContent.length >= 100;
+                   this.odvMembers.some(m => m.name && m.role);
         },
         
         // Format functions
@@ -1121,7 +1120,6 @@ function chatUploadFlow() {
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-4 gap-4">
                             <p class="text-sm text-gray-500">
                                 <span x-text="notesCharCount"></span> caratteri
-                                <span x-show="notesCharCount < 100" class="text-red-500">(minimo 100 per un verbale completo)</span>
                             </p>
                             <button type="button" 
                                 @click="confirmNotes()"
